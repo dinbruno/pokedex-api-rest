@@ -33,7 +33,7 @@ export const ListPokemons = () => {
         {filtered.map((item: any, index: any) => {
           return (
             <Sty.ContainerList>
-              <>{console.log(item)}</>
+              {/* <>{console.log(item.types[1].type.name)}</> */}
               <Sty.Div>
                 <div ref={ref} className="keen-slider">
                   <div className="keen-slider__slide number-slide1" id="slide">
@@ -53,10 +53,19 @@ export const ListPokemons = () => {
               <Sty.DivTwo>
                 <span> {item.name}</span>
 
-                <span>{item.id}</span>
+                <span>
+                  {"#"}
+                  {item.id}
+                </span>
                 <div id="sizes">
                   <span>Peso: {item.weight}kg</span>
                   <span>Altura: {item.height}m</span>
+                </div>
+                <div id="types">
+                  <span> {item.types[0].type.name}</span>
+                  {item.types[1] && (
+                    <span> {item.types[1].type.name}</span>
+                  )}
                 </div>
               </Sty.DivTwo>
             </Sty.ContainerList>

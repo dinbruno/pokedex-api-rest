@@ -34,7 +34,6 @@ const Contents = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto;
-
   }
 `;
 const ContainerList = styled.div`
@@ -42,7 +41,7 @@ const ContainerList = styled.div`
   padding: 20px 10px;
   background-color: ${({ theme }) => theme.colors.card};
   width: 220px;
-  height: 200px;
+  height: 220px;
   position: relative;
   margin: 0 auto;
 `;
@@ -81,12 +80,26 @@ const DivTwo = styled.div`
     position: absolute;
     top: 5px;
     left: 15px;
+    font-size: 12px;
   }
 
   > div {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 10px 0;
+  }
+
+  > #types {
+    display: flex;
+    justify-content: center;
+    > span {
+      text-transform: capitalize;
+      border: 2px solid ${({ theme }) => theme.colors.primary.solid};
+      border-radius: 5px;
+      padding: 5px;
+      background-color: white;
+      color: black;
+    }
   }
 `;
 
@@ -110,6 +123,7 @@ const Filter = styled.div`
       padding: 10px 10px;
       border: 2px solid ${({ theme }) => theme.colors.input};
       outline-color: ${({ theme }) => theme.colors.input};
+      color: black;
     }
   }
 `;
