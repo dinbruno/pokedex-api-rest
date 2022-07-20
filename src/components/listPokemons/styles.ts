@@ -74,6 +74,13 @@ const DivTwo = styled.div`
     text-transform: capitalize;
     align-items: center;
     font-weight: 600;
+
+  }
+
+  .name {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
   }
 
   > span:nth-child(2) {
@@ -81,6 +88,7 @@ const DivTwo = styled.div`
     top: 5px;
     left: 15px;
     font-size: 12px;
+    
   }
 
   > div {
@@ -92,14 +100,17 @@ const DivTwo = styled.div`
   > #types {
     display: flex;
     justify-content: center;
+    gap: 5px;
+
     > span {
       text-transform: capitalize;
-      border: 2px solid ${({ theme }) => theme.colors.primary.solid};
-      border-radius: 5px;
-      padding: 5px;
+      padding: 5px 10px;
       background-color: white;
       color: black;
+      border-radius: 5px;
     }
+
+  
   }
 `;
 
