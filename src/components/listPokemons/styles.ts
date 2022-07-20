@@ -74,7 +74,6 @@ const DivTwo = styled.div`
     text-transform: capitalize;
     align-items: center;
     font-weight: 600;
-
   }
 
   .name {
@@ -88,7 +87,6 @@ const DivTwo = styled.div`
     top: 5px;
     left: 15px;
     font-size: 12px;
-    
   }
 
   > div {
@@ -109,8 +107,6 @@ const DivTwo = styled.div`
       color: black;
       border-radius: 5px;
     }
-
-  
   }
 `;
 
@@ -127,14 +123,20 @@ const Filter = styled.div`
   div {
     display: flex;
     justify-content: center;
+    
+    .search {
+      left: 35px;
+      top: 8px;
+      position: relative;
+    }
     > input {
       width: 600px;
       border: 1px solid white;
       border-radius: 10px;
-      padding: 10px 10px;
-      border: 2px solid ${({ theme }) => theme.colors.input};
-      outline-color: ${({ theme }) => theme.colors.input};
-      color: black;
+      padding: 10px 40px;
+      border: 2px solid ${({ theme }) => theme.colors.input.text};
+      outline-color: ${({ theme }) => theme.colors.input.text};
+      background-color: ${({ theme }) => theme.colors.input.bg};
     }
   }
 `;
@@ -143,7 +145,7 @@ const Pag = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px 0;
-`
+`;
 
 export const Sty = {
   Container,
@@ -152,5 +154,5 @@ export const Sty = {
   Div,
   DivTwo,
   Filter,
-  Pag
+  Pag,
 };

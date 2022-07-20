@@ -8,6 +8,9 @@ export interface DefaultThemeType  {
         },
         card: string,
         font: string,
-        input: string
+        input: {
+          text: string,
+          bg: string
+        }
       },
     };

@@ -4,7 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useEffect, useState } from "react";
 import { PaginationComponent } from "../Pagination";
-
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 export const ListPokemons = () => {
   const { allPokemonsList } = useApiContext();
   const [search, setSearch] = useState("");
@@ -23,6 +23,9 @@ export const ListPokemons = () => {
     <Sty.Container>
       <Sty.Filter>
         <div>
+          <div className="search">
+            <SearchOutlinedIcon />
+          </div>
           <input
             type="search"
             value={search}

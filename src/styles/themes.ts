@@ -8,7 +8,10 @@ export const defaultTheme = {
     },
     card: "#D7DEDC",
     font: "#403D3D",
-    input: "#2873B9"
+    input: {
+      text: "#2873B9",
+      bg: "#fff"
+    }
   },
 };
 
@@ -19,6 +22,9 @@ export const darkTheme = {
         },
         card: "#403D3D",
         font: "#fff",
-        input: "#FFCC01"
+        input: {
+          text: "#FFCC01",
+          bg: "#403D3D"
+        }
     },
 }
