@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-
   height: 120px;
-
-`
+`;
 
 const Divison = styled.div`
   position: relative;
@@ -25,12 +23,11 @@ const Divison = styled.div`
   > .theme {
     display: flex;
     align-items: center;
-    margin-left: 30px
+    margin-left: 30px;
   }
 `;
 
-
 export const Sty = {
   Container,
-  Divison
+  Divison,
 };

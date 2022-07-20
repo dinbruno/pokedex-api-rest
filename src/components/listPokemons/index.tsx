@@ -48,7 +48,7 @@ export const ListPokemons = () => {
                       <img src={noImage} alt="noimagefound"></img>
                     )}
                   </div>
-                  
+
                   <div className="keen-slider__slide number-slide1" id="slide">
                     <img src={item.sprites.front_shiny} alt="pokemonPics" />
                   </div>
