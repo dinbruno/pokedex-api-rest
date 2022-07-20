@@ -4,7 +4,9 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useEffect, useState } from "react";
 import { PaginationComponent } from "../Pagination";
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import noImage from "../../assets/pngs/NoImage.png";
+
 export const ListPokemons = () => {
   const { allPokemonsList } = useApiContext();
   const [search, setSearch] = useState("");
@@ -40,8 +42,13 @@ export const ListPokemons = () => {
               <Sty.Div>
                 <div ref={ref} className="keen-slider">
                   <div className="keen-slider__slide number-slide1" id="slide">
-                    <img src={item.sprites.front_default} alt="pokemonPics" />
+                    {!!item.sprites.front_default ? (
+                      <img src={item.sprites.front_default} alt="pokemonPics" />
+                    ) : (
+                      <img src={noImage} alt="noimagefound"></img>
+                    )}
                   </div>
+                  
                   <div className="keen-slider__slide number-slide1" id="slide">
                     <img src={item.sprites.front_shiny} alt="pokemonPics" />
                   </div>
