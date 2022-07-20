@@ -10,6 +10,32 @@ const Contents = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   margin: 0 20rem;
+
+  @media (min-width: 1920px) {
+    margin: 0 20rem;
+  }
+  @media (max-width: 1600px) {
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) {
+    margin: 0 auto;
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 780px) {
+    margin: 0 auto;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+
+  }
 `;
 const ContainerList = styled.div`
   border-radius: 20px;
@@ -18,6 +44,7 @@ const ContainerList = styled.div`
   width: 220px;
   height: 200px;
   position: relative;
+  margin: 0 auto;
 `;
 
 const Div = styled.div`
@@ -68,9 +95,14 @@ const Filter = styled.div`
   justify-content: center;
   padding: 20px 0;
 
+  @media (max-width: 600px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   div {
     display: flex;
-  justify-content: center;
+    justify-content: center;
     > input {
       width: 600px;
       border: 1px solid white;
@@ -80,7 +112,6 @@ const Filter = styled.div`
       outline-color: ${({ theme }) => theme.colors.input};
     }
   }
-
 `;
 export const Sty = {
   Container,
