@@ -70,7 +70,9 @@ export const ListPokemons = () => {
           );
         })}
       </Sty.Contents>
-      <PaginationComponent />
+      <Sty.Pag>
+        <PaginationComponent />
+      </Sty.Pag>
     </Sty.Container>
   );
 };

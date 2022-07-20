@@ -104,7 +104,7 @@ const DivTwo = styled.div`
 
     > span {
       text-transform: capitalize;
-      padding: 5px 10px;
+      padding: 5px 20px;
       background-color: white;
       color: black;
       border-radius: 5px;
@@ -138,6 +138,13 @@ const Filter = styled.div`
     }
   }
 `;
+
+const Pag = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+`
+
 export const Sty = {
   Container,
   Contents,
@@ -145,4 +152,5 @@ export const Sty = {
   Div,
   DivTwo,
   Filter,
+  Pag
 };

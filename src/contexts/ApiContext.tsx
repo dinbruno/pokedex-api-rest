@@ -10,14 +10,14 @@ type Context = {
   shortPokemonsList: any;
   allPokemonsList: any;
   setSpecificPokemon?: (value: any) => void;
-  count: any;
+  count: number;
 };
 
 const ApiContext = createContext<Context | null>(null);
 
 export const ApiProvider = ({ children }: Props) => {
   const [currPage, setCurrPage] = useState(0);
-  const [count, setCount] = useState<number>();
+  const [count, setCount] = useState<number>(0);
 
   const [shortPokemonsList, setShortPokemonsList] = useState([]);
   const [allPokemonsList, setAllPokemonsList] = useState([] as any);
@@ -45,7 +45,7 @@ export const ApiProvider = ({ children }: Props) => {
       .then((response) => response.json())
       .then((json) => {
         setShortPokemonsList(json.results);
-        setCount(json.count);
+        setCount(Math.round(json.count / 20));
       });
   };
 
