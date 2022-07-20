@@ -5,50 +5,68 @@ type Props = {
 };
 
 type Context = {
-  setPokemonList: (value: any) => void;
-  pokemonList: any;
+  currPage: number;
+  setCurrPage: React.Dispatch<React.SetStateAction<number>>;
+  shortPokemonsList: any;
   allPokemonsList: any;
   setSpecificPokemon?: (value: any) => void;
+  count: any;
 };
 
 const ApiContext = createContext<Context | null>(null);
 
 export const ApiProvider = ({ children }: Props) => {
-  const [pokemonList, setPokemonList] = useState();
-  const [specificPokemon, setSpecificPokemon] = useState();
+  const [currPage, setCurrPage] = useState(0);
+  const [count, setCount] = useState<number>();
+
+  const [shortPokemonsList, setShortPokemonsList] = useState([]);
   const [allPokemonsList, setAllPokemonsList] = useState([] as any);
 
-  useEffect(() => {
-    const urlPokemon = (id: number) =>
+  const PromiseListPokemons = async () => {
+    setAllPokemonsList([]);
+
+    const urlPokemon = (id: string) =>
       `https://pokeapi.co/api/v2/pokemon/${id}`;
 
-    for (let index = 1; index <= 150; index++) {
-      fetch(urlPokemon(index)).then((res) =>
-        res
-          .json()
-          .then((data) => setAllPokemonsList((prev: any) => [...prev, data]))
-      );
-    }
-  }, []);
+    shortPokemonsList.forEach(({ name }: any) => {
+      fetch(urlPokemon(name))
+        .then((res) => res.json())
+        .then((data) => setAllPokemonsList((prev: any) => [...prev, data]));
+    });
+  };
 
-  useEffect(() => {
-    const getPokemons = `https://pokeapi.co/api/v2/pokemon/`;
+  const PromiseShortPokemons = async () => {
+    const perPage = 20;
+    const offset = perPage * (currPage - 1);
+
+    const getPokemons = `https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`;
+
     fetch(getPokemons)
       .then((response) => response.json())
       .then((json) => {
-        const resultData = json.results.map((index: any, item: any) => {
-          return index.name;
-        });
-        setPokemonList(resultData);
+        setShortPokemonsList(json.results);
+        setCount(json.count);
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    if (!!shortPokemonsList) PromiseListPokemons();
+    // eslint-disable-next-line
+  }, [shortPokemonsList]);
+
+  useEffect(() => {
+    if (!!currPage) PromiseShortPokemons();
+    // eslint-disable-next-line
+  }, [currPage]);
 
   return (
     <ApiContext.Provider
       value={{
-        pokemonList,
-        setPokemonList,
+        shortPokemonsList,
         allPokemonsList,
+        currPage,
+        setCurrPage,
+        count,
       }}
     >
       {children}

@@ -2,7 +2,7 @@ import { useApiContext } from "../../contexts/ApiContext";
 import { Sty } from "./styles";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PaginationComponent } from "../Pagination";
 
 export const ListPokemons = () => {
@@ -58,8 +58,8 @@ export const ListPokemons = () => {
                   {item.id}
                 </span>
                 <div id="sizes">
-                  <span>Peso:{item.weight}kg</span>
-                  <span> Altura:{item.height}m</span>
+                  <span>Peso: {item.weight}kg</span>
+                  <span> Altura: {item.height}m</span>
                 </div>
                 <div id="types">
                   <span> {item.types[0].type.name}</span>
