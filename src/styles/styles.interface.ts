@@ -6,6 +6,8 @@ export interface DefaultThemeType  {
         secondary?: {
           solid: string,
         },
+        card: string,
+        font: string,
+        input: string
       },
-      card: string,
     };

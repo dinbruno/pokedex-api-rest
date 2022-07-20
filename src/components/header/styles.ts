@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+
+  height: 120px;
+
+`
+
+const Divison = styled.div`
   position: relative;
 
   background-color: white;
-  height: 100px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   display: flex;
@@ -24,6 +29,8 @@ const Container = styled.div`
   }
 `;
 
+
 export const Sty = {
   Container,
+  Divison
 };
