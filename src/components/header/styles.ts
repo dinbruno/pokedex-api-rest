@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 120px;
+  height: 140px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
 `;
 
 const Divison = styled.div`
   position: relative;
-
+  border: 2px solid ${({ theme }) => theme.colors.input.text};
+  border-top: none;
   background-color: white;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -21,9 +25,11 @@ const Divison = styled.div`
   }
 
   > .theme {
+    position: absolute;
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    right: 5%;
+    top: 15%;
   }
 `;
 
