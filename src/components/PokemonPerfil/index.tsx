@@ -18,19 +18,39 @@ export const PerfilPokemon: React.FC = () => {
 
   return (
     <Sty.Container>
-      <Sty.ImgContainer>
-        <img src={Pokedex} alt="pokedex" />
-        <Sty.FloatPokemon>
-          <img
-            src={
-              currentPokemon?.["sprites"]?.["versions"]?.["generation-v"]?.[
-                "black-white"
-              ]?.["animated"]?.["front_default"]
-            }
-            alt="pokemonPicture"
-          />
-        </Sty.FloatPokemon>
-      </Sty.ImgContainer>
+      <div className="cont">
+        <Sty.ImgContainer>
+          <img src={Pokedex} alt="pokedex" />
+          <span>#{currentPokemon?.["id"]}</span>
+          <h1>{currentPokemon?.["name"]}</h1>
+          <Sty.FloatPokemon>
+            <img
+              src={
+                currentPokemon?.["sprites"]?.["versions"]?.["generation-v"]?.[
+                  "black-white"
+                ]?.["animated"]?.["front_default"]
+              }
+              alt="pokemonPicture"
+            />
+          </Sty.FloatPokemon>
+
+          <Sty.ContentInfos>
+            <ul>
+              <li>Tipo: {currentPokemon?.types?.[0]?.type?.name}</li>
+              <li>Peso: {currentPokemon?.weight}kg</li>
+              <li>Altura: {currentPokemon?.height}m</li>
+              <li>EXP: {currentPokemon?.base_experience}</li>
+            </ul>
+            <ul>
+              <li>Habilidade 1: {currentPokemon?.abilities?.[0]?.ability.name}</li>
+              <li>
+
+              </li>
+              <li>Habilidade 2: {currentPokemon?.abilities?.[1]?.ability.name}</li>
+            </ul>
+          </Sty.ContentInfos>
+        </Sty.ImgContainer>
+      </div>
     </Sty.Container>
   );
 };

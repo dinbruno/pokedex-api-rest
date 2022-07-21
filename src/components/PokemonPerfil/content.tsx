@@ -5,9 +5,10 @@ import { Sty } from "./styles";
 
 export const Content: React.FC = () => {
   return (
-    <Sty.Container>
-        <Header />
-        <PerfilPokemon />
-    </Sty.Container>
+    <Sty.ContainerContent>
+      <Header />
+
+      <PerfilPokemon />
+    </Sty.ContainerContent>
   );
 };
