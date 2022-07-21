@@ -4,14 +4,10 @@ import { Header } from "../header";
 import { Sty } from "./styles";
 
 export const Content: React.FC = () => {
-
-  
-
-
   return (
     <Sty.Container>
-      <Header />
-      <PerfilPokemon />
+        <Header />
+        <PerfilPokemon />
     </Sty.Container>
   );
 };
