@@ -9,7 +9,7 @@ export const PerfilPokemon: React.FC = () => {
   const pokemon = window.location.pathname.substring(1);
 
   useEffect(() => {
-    fetch(`http://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
       .then((data) => data.json())
       .then((json) => setCurrentPokemon(json));
   }, []);
