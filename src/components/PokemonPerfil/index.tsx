@@ -17,6 +17,8 @@ export const PerfilPokemon: React.FC = () => {
   console.log(currentPokemon);
 
   return (
+
+
     <Sty.Container>
       <div className="cont">
         <Sty.ImgContainer>
@@ -51,6 +53,7 @@ export const PerfilPokemon: React.FC = () => {
           </Sty.ContentInfos>
         </Sty.ImgContainer>
       </div>
+      <a href="/" rel="noreferrer noopener" id="anchor">Voltar</a>
     </Sty.Container>
   );
 };

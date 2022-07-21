@@ -2,6 +2,37 @@ import styled from "styled-components";
 
 const ContainerContent = styled.div`
   background-color: ${({ theme }) => theme.colors.primary.solid};
+  height: 100%;
+
+  #anchor {
+    border: 1px solid black;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #3a444d;
+    font-size: clamp(8px, 5vw, 1rem);
+    box-shadow: -3px 4px 0 #888, -2px 1px 0 #333;
+    position: absolute;
+    top: -20px;
+    left: 30%;
+    background-color: #fff;
+    padding: 2px 5px;
+
+    @media (max-width: 1500px) {
+      left: 25%;
+    }
+    @media (max-width: 1100px) {
+      left: 15%;
+    }
+    @media (max-width: 900px) {
+      left: 10%;
+    }
+    @media (max-width: 600px) {
+      left: 45%;
+      top: -35px;
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -73,7 +104,6 @@ const ImgContainer = styled.div`
       top: 125px;
       right: 86px;
     }
-
   }
 
   > h1 {
@@ -92,7 +122,6 @@ const ImgContainer = styled.div`
     top: 100px;
     padding: 5px 10px;
 
-    
     @media (max-width: 400px) {
       top: 75px;
       right: 90px;
@@ -105,16 +134,15 @@ const FloatPokemon = styled.div`
   top: 250px;
   right: 210px;
 
-    
   @media (max-width: 500px) {
-      top: 205px;
-      right: 180px;
-    }
-    
+    top: 205px;
+    right: 180px;
+  }
+
   @media (max-width: 400px) {
-      top: 185px;
-      right: 160px;
-    }
+    top: 185px;
+    right: 160px;
+  }
 
   > img {
     width: 100px;
