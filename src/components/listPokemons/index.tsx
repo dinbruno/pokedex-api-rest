@@ -2,7 +2,7 @@ import { useApiContext } from "../../contexts/ApiContext";
 import { Sty } from "./styles";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PaginationComponent } from "../Pagination";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import noImage from "../../assets/pngs/NoImage.png";
@@ -36,9 +36,9 @@ export const ListPokemons = () => {
         </div>
       </Sty.Filter>
       <Sty.Contents>
-        {filtered.map((item: any, index: any) => {
+        {filtered.map((item: any, key: any) => {
           return (
-            <Sty.ContainerList>
+            <Sty.ContainerList key={key}>
               <Sty.Div>
                 <div ref={ref} className="keen-slider">
                   <div className="keen-slider__slide number-slide1" id="slide">
@@ -60,22 +60,24 @@ export const ListPokemons = () => {
                   </div>
                 </div>
               </Sty.Div>
-              <Sty.DivTwo>
-                <span className="name"> {item.name}</span>
+              <a href={`/${item.name}`} rel="noreferrer noopener">
+                <Sty.DivTwo>
+                  <span className="name"> {item.name}</span>
 
-                <span>
-                  {"#"}
-                  {item.id}
-                </span>
-                <div id="sizes">
-                  <span>Peso: {item.weight}kg</span>
-                  <span> Altura: {item.height}m</span>
-                </div>
-                <div id="types">
-                  <span> {item.types[0].type.name}</span>
-                  {item.types[1] && <span> {item.types[1].type.name}</span>}
-                </div>
-              </Sty.DivTwo>
+                  <span>
+                    {"#"}
+                    {item.id}
+                  </span>
+                  <div id="sizes">
+                    <span>Peso: {item.weight}kg</span>
+                    <span> Altura: {item.height}m</span>
+                  </div>
+                  <div id="types">
+                    <span> {item.types[0].type.name}</span>
+                    {item.types[1] && <span> {item.types[1].type.name}</span>}
+                  </div>
+                </Sty.DivTwo>
+              </a>
             </Sty.ContainerList>
           );
         })}

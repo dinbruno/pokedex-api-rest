@@ -44,6 +44,10 @@ const ContainerList = styled.div`
   height: 220px;
   position: relative;
   margin: 0 auto;
+
+   > a {
+    text-decoration: none;
+   }
 `;
 
 const Div = styled.div`
