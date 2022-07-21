@@ -53,6 +53,14 @@ const ImgContainer = styled.div`
 
   > img {
     width: 500px;
+    @media (max-width: 500px) {
+      width: 450px;
+      margin: 0 auto;
+    }
+    @media (max-width: 400px) {
+      width: 380px;
+      margin: 0 auto;
+    }
   }
 
   > span {
@@ -60,6 +68,12 @@ const ImgContainer = styled.div`
     top: 165px;
     left: 60px;
     font-weight: bold;
+
+    @media (max-width: 400px) {
+      top: 125px;
+      right: 86px;
+    }
+
   }
 
   > h1 {
@@ -77,6 +91,12 @@ const ImgContainer = styled.div`
     right: 100px;
     top: 100px;
     padding: 5px 10px;
+
+    
+    @media (max-width: 400px) {
+      top: 75px;
+      right: 90px;
+    }
   }
 `;
 
@@ -85,8 +105,23 @@ const FloatPokemon = styled.div`
   top: 250px;
   right: 210px;
 
+    
+  @media (max-width: 500px) {
+      top: 205px;
+      right: 180px;
+    }
+    
+  @media (max-width: 400px) {
+      top: 185px;
+      right: 160px;
+    }
+
   > img {
     width: 100px;
+
+    @media (max-width: 400px) {
+      width: 80px;
+    }
   }
 `;
 const Info = styled.div`
@@ -113,6 +148,16 @@ const ContentInfos = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
+
+  @media (max-width: 500px) {
+    max-width: 230px;
+    left: 100px;
+  }
+  @media (max-width: 400px) {
+    max-width: 200px;
+    left: 100px;
+    bottom: 130px;
+  }
 
   ul {
     > li {
