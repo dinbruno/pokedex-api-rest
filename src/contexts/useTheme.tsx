@@ -59,7 +59,7 @@ export const ThemeContextProvider: React.FC<ProviderProps> = ({ children }) => {
       setIsDarkMode(storageTheme === "DARK");
       storageTheme === "DARK" ? changeToDark() : changeToLight();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, []);
 

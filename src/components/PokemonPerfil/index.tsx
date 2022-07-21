@@ -14,7 +14,7 @@ export const PerfilPokemon: React.FC = () => {
       .then((json) => setCurrentPokemon(json));
   }, []);
 
-  console.log(currentPokemon);
+  // console.log(currentPokemon);
 
   return (
 
