@@ -11,6 +11,7 @@ type Context = {
   allPokemonsList: any;
   setSpecificPokemon?: (value: any) => void;
   count: number;
+  eachPokemon: string;
 };
 
 const ApiContext = createContext<Context | null>(null);
@@ -18,9 +19,12 @@ const ApiContext = createContext<Context | null>(null);
 export const ApiProvider = ({ children }: Props) => {
   const [currPage, setCurrPage] = useState(0);
   const [count, setCount] = useState<number>(0);
+  const [eachPokemon, setEachPokemon] = useState("");
 
   const [shortPokemonsList, setShortPokemonsList] = useState([]);
   const [allPokemonsList, setAllPokemonsList] = useState([] as any);
+
+  const [currentPokemon, setCurrentPokemon] = useState([] as any);
 
   const PromiseListPokemons = async () => {
     setAllPokemonsList([]);
@@ -31,7 +35,8 @@ export const ApiProvider = ({ children }: Props) => {
     shortPokemonsList.forEach(({ name }: any) => {
       fetch(urlPokemon(name))
         .then((res) => res.json())
-        .then((data) => setAllPokemonsList((prev: any) => [...prev, data]));
+        .then((data) => setAllPokemonsList((prev: any) => [...prev, data]))
+        .then((each) => setCurrentPokemon(each));
     });
   };
 
@@ -67,6 +72,7 @@ export const ApiProvider = ({ children }: Props) => {
         currPage,
         setCurrPage,
         count,
+        eachPokemon,
       }}
     >
       {children}
