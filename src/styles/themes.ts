@@ -11,7 +11,8 @@ export const defaultTheme = {
     input: {
       text: "#2873B9",
       bg: "#fff"
-    }
+    },
+    header: "#fff"
   },
 };
 
@@ -25,6 +26,7 @@ export const darkTheme = {
         input: {
           text: "#FFCC01",
           bg: "#403D3D"
-        }
+        },
+        header: "f80030"
     },
 }

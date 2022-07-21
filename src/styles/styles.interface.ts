@@ -12,5 +12,6 @@ export interface DefaultThemeType  {
           text: string,
           bg: string
         }
+        header: string
       },
     };

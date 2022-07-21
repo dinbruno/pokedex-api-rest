@@ -6,8 +6,6 @@ import { Container } from "./styles";
 
 export const Home: React.FC = () => {
 
-  const { allPokemonsList } = useApiContext();
-
 
   return (
     <Container>

@@ -11,7 +11,7 @@ const Divison = styled.div`
   position: relative;
   border: 2px solid ${({ theme }) => theme.colors.input.text};
   border-top: none;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.header};
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   display: flex;
