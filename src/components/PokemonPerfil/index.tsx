@@ -17,8 +17,6 @@ export const PerfilPokemon: React.FC = () => {
   // console.log(currentPokemon);
 
   return (
-
-
     <Sty.Container>
       <div className="cont">
         <Sty.ImgContainer>
@@ -44,16 +42,20 @@ export const PerfilPokemon: React.FC = () => {
               <li>EXP: {currentPokemon?.base_experience}</li>
             </ul>
             <ul>
-              <li>Habilidade 1: {currentPokemon?.abilities?.[0]?.ability.name}</li>
               <li>
-
+                Habilidade 1: {currentPokemon?.abilities?.[0]?.ability.name}
               </li>
-              <li>Habilidade 2: {currentPokemon?.abilities?.[1]?.ability.name}</li>
+              <li></li>
+              <li>
+                Habilidade 2: {currentPokemon?.abilities?.[1]?.ability.name}
+              </li>
             </ul>
           </Sty.ContentInfos>
         </Sty.ImgContainer>
       </div>
-      <a href="/" rel="noreferrer noopener" id="anchor">Voltar</a>
+      <a href="/" rel="noreferrer noopener" id="anchor">
+        Voltar
+      </a>
     </Sty.Container>
   );
 };
