@@ -30,7 +30,7 @@ export const ApiProvider = ({ children }: Props) => {
     setAllPokemonsList([]);
 
     const urlPokemon = (id: string) =>
-      `http://localhost:5050/pokemon/${id}`;
+      `https://pokeapi.co/api/v2/pokemon/${id}`;
 
     shortPokemonsList.forEach(({ name }: any) => {
       fetch(urlPokemon(name))
@@ -44,7 +44,7 @@ export const ApiProvider = ({ children }: Props) => {
     const perPage = 20;
     const offset = perPage * (currPage - 1);
 
-    const getPokemons = `http://localhost:5050/pokemons?perPage=${perPage}&offset=${offset}`;
+    const getPokemons = `https://pokeapi.co/api/v2/pokemon?perPage=${perPage}&offset=${offset}`;
 
     fetch(getPokemons)
       .then((response) => response.json())
